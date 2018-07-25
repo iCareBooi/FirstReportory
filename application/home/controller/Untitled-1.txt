@@ -1,0 +1,28 @@
+$data = [
+    'order_id1' = [
+     0 =>[
+       'good_is' => '111',
+        price => '1000'
+     ],
+     1 => [
+        'good_is' => '111',
+        price => '1000'
+     ]
+    ],
+    'order_id1' = [
+        'good_is' => '111',
+        price => '1000'
+    ],
+    'order_id1' = [
+        'good_is' => '111',
+        price => '1000'
+    ],
+    'order_id1' = [
+        'good_is' => '111',
+        price => '1000'
+    ],
+    'order_id1' = [
+        'good_is' => '111',
+        price => '1000'
+    ],
+];

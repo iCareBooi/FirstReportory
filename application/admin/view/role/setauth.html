@@ -1,0 +1,43 @@
+
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">分派权限</h1>
+        </div>
+
+        <div class="well">
+        正在给【{$role.role_name}】分派权限
+        <form action="{:url('saveauth')}" method="post">
+            <input type="hidden" name="role_id" value="{$role.id}">
+            <!-- table -->
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>权限分类(一级权限)</th>
+                        <th>权限（二级权限）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach $top_all as $top_v}
+                    <tr class="success">
+                        <td><input type="checkbox" name="id[]" value="{$top_v.id}" {in name="top_v.id" value="$role.role_auth_ids"} checked="checked"{/in}>{$top_v.auth_name}</td>
+                        <td>
+                            {foreach $second_all as $second_v}
+                            {if ($second_v.pid eq $top_v.id)}
+                            <input type="checkbox" name="id[]" value="{$second_v.id}" {in name="second_v.id" value="$role.role_auth_ids"} checked="checked"{/in}>{$second_v.auth_name}
+                            {/if}
+                            {/foreach}
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit">保存</button>
+        </form>
+        </div>
+        <!-- footer -->
+        <footer>
+            <hr>
+            <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+        </footer>
+    </div>
